@@ -16,51 +16,57 @@ pre {
 </style>
 <title>The stuffs</title>
 <body>
-<pre><code class="java"> 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+<div class="grid-container">
+	<div class="item1">"Test"</div>
+		<div class="item2">
+		<pre><code class="java"> 
+		import java.util.ArrayList;
+		import java.util.Arrays;
+		import java.util.Scanner;
 
-public class AddMaxSubArrays {
-	/**
-	 * Gives sum of all subarrays of given arrays for integers
-	 * 
-	 * Time complexity: O(n^2*log(n^2))
-	 * 
-	 * 2 for loops O(n^2)
-	 * 
-	 * Sorting arraylist O(log(n^2))
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int x, y = 0;
+		public class AddMaxSubArrays {
+			/**
+			 * Gives sum of all subarrays of given arrays for integers
+			 * 
+			 * Time complexity: O(n^2*log(n^2))
+			 * 
+			 * 2 for loops O(n^2)
+			 * 
+			 * Sorting arraylist O(log(n^2))
+			 */
+			public static void main(String[] args) {
+				// TODO Auto-generated method stub
+				int x, y = 0;
 
-		Scanner sc = new Scanner(System.in);
-		x = sc.nextInt();
-		y = sc.nextInt();
-		int[] a = new int[x];
-		for (int i = 0; i < x; i++) { //Gets all contigious numbers
-			a[i] = sc.nextInt();
-		}
-		ArrayList<Integer> arrList = new ArrayList<Integer>();
-		for (int i = 0; i < x; i++) { //Makes sum for current subarray
-			int sum = 0;
-			for (int j = i; j < x; j++) { //Only adds maximum subarray summation
-				sum += a[j];
+				Scanner sc = new Scanner(System.in);
+				x = sc.nextInt();
+				y = sc.nextInt();
+				int[] a = new int[x];
+				for (int i = 0; i < x; i++) { //Gets all contigious numbers
+					a[i] = sc.nextInt();
+				}
+				ArrayList<Integer> arrList = new ArrayList<Integer>();
+				for (int i = 0; i < x; i++) { //Makes sum for current subarray
+					int sum = 0;
+					for (int j = i; j < x; j++) { //Only adds maximum subarray summation
+						sum += a[j];
 
-				arrList.add(sum);
+						arrList.add(sum);
+					}
+				}
+				Integer[] b = arrList.toArray(new Integer[0]);
+				Arrays.sort(b); 								// Sorts and then prints those max subarray summations
+				for (int i = b.length - 1; i > b.length - x - 1; i--) {
+					System.out.print(b[i] + " ");
+				}
+
 			}
-		}
-		Integer[] b = arrList.toArray(new Integer[0]);
-		Arrays.sort(b); 								// Sorts and then prints those max subarray summations
-		for (int i = b.length - 1; i > b.length - x - 1; i--) {
-			System.out.print(b[i] + " ");
-		}
 
-	}
-
-}
-</code></pre>
+		}
+		</code></pre>
+		</div>
+	<div class="item3"></div>
+</div>
 </body>
 </head>
 </html>
