@@ -72,7 +72,6 @@ pre {
 	public class AddMaxSubArrays {
 		
 		public static void main(String[] args) {
-			// TODO Auto-generated method stub
 			int x, y = 0;
 
 			Scanner sc = new Scanner(System.in);
@@ -92,7 +91,7 @@ pre {
 				}
 			}
 			Integer[] b = arrList.toArray(new Integer[0]);
-			Arrays.sort(b); 	// Sorts and then prints those max subarray summations
+			Arrays.sort(b); 	           // Sorts and then prints those max subarray summations
 			for (int i = b.length - 1; i > b.length - x - 1; i--) {
 				System.out.print(b[i] + " ");
 			}
