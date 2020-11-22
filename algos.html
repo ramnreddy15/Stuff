@@ -6,10 +6,17 @@
 <script>hljs.initHighlightingOnLoad();</script>
 <style>
 .item1 { grid-area: header; }
-.item2 { grid-area: menu; }
+.item2 { 
+	grid-area: menu; 
+	text-align:center;
+}
 .item3 { grid-area: main; }
-.item4 { grid-area: right; }
-.item5 { grid-area: footer; }
+.item4 { grid-area: right; 
+	text-align:center;
+}
+.item5 { grid-area: footer; 
+	text-align:center;
+}
 
 body {
 	background-color:LightSlateGray;
@@ -31,7 +38,6 @@ pre {
 }
 
 .grid-container > div {
-	text-align:center;
 	padding: 10px;
 	color:white;
 	font-family:arial;
@@ -43,15 +49,15 @@ pre {
 <div class="grid-container">
 	<div class="item1">
 		<pre><code class="java">
-			/**
-			 * Gives sum of all subarrays of given arrays for integers
-			 * 
-			 * Time complexity: O(n^2*log(n^2))
-			 * 
-			 * 2 for loops O(n^2)
-			 * 
-			 * Sorting arraylist O(log(n^2))
-			 */
+						/**
+						 * Gives sum of all subarrays of given arrays for integers
+						 * 
+						 * Time complexity: O(n^2*log(n^2))
+						 * 
+						 * 2 for loops O(n^2)
+						 * 
+						 * Sorting arraylist O(log(n^2))
+						 */
 		</code></pre>
 	</div>
 	<div class="item2">"Quick Search Here"</div>
