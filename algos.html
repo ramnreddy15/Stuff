@@ -53,14 +53,14 @@ pre {
 	<div class="item2">"Quick Search Here"</div>
 	<div class="item3">
 	
-	<pre><div style="background-color:#333333; color:white;font-family:courier-new;font-size:15;">
-	   Gives sum of all subarrays of given arrays for integers
-	   
-	   Time complexity: O(n^2*log(n^2))
-	   
-	   2 for loops gives O(n^2) time complexity
-	   
-	   Sorting arraylist O(log(n^2))
+	<pre><div style="background-color:#333333; color:white;font-family:courier new;font-size:15;">
+		   Gives sum of all subarrays of given arrays for integers
+		   
+		   Time complexity: O(n^2*log(n^2))
+		   
+		   2 for loops gives O(n^2) time complexity
+		   
+		   Sorting arraylist O(log(n^2))
 	 
 	</div></pre>
 
@@ -95,6 +95,65 @@ pre {
 			for (int i = b.length - 1; i > b.length - x - 1; i--) {
 				System.out.print(b[i] + " ");
 			}
+
+		}
+
+	}
+	</code></pre>
+	<pre><div style="background-color:#333333; color:white;font-family:courier new;font-size:15;">
+		   Gives maximum of subarray size k
+		   
+		   Uncomment blocks to find indexes of max
+		   
+		   Time complexity: O(n)
+		 	 
+	</div></pre>
+
+	<pre><code class="java"> 
+	import java.util.ArrayList;
+	import java.util.Arrays;
+	import java.util.Scanner;
+
+	public class FindMaxFromSubArrays {
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			int n, k = 0;
+
+			Scanner sc = new Scanner(System.in);
+			n = sc.nextInt();
+			k = sc.nextInt();
+			int[] a = new int[n];
+			for (int i = 0; i < n; i++) { //Gets all contigious numbers
+				a[i] = sc.nextInt();
+			}
+			int l = 0, r = k - 1;
+			int sum = 0;
+			for (int i = l; i <= r; i++) //Creates first sum k length subarray
+				sum += a[i];
+			int max = sum;
+			// int ll = l, rr=r;
+			while (r != (n - 1)) { //From here only subtracts first elment of previous subarray and adds last element of current subarray
+				sum -= a[l];
+				l++;
+				r++;
+				sum += a[r];
+
+				max = Math.max(sum, max);
+				if (sum > max) //Checks to see if the sum is greatest
+					max = sum;
+
+	//			if(sum>max) {
+	//				max = sum;
+	//				ll=l;
+	//				rr= r;
+	//			}
+
+			}
+			System.out.println(max); //Prints max
+
+	//		for (int i = ll; i <= rr; i++) {
+	//			System.out.println(a[i] + " ");
+	//		}
 
 		}
 
