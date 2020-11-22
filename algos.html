@@ -53,7 +53,7 @@ pre {
 	<div class="item2">"Quick Search Here"</div>
 	<div class="item3">
 	
-	<pre><div style="background-color:#333333; color:white;font-family:courier new;font-size:15;">
+	<pre><div style="background-color:#333333; color:white;font-family:courier new;font-size:15;font-weight: bold;">
 		   Gives sum of all subarrays of given arrays for integers
 		   
 		   Time complexity: O(n^2*log(n^2))
@@ -100,7 +100,7 @@ pre {
 
 	}
 	</code></pre>
-	<pre><div style="background-color:#333333; color:white;font-family:courier new;font-size:15;">
+	<pre><div style="background-color:#333333; color:white;font-family:courier new;font-size:15;font-weight: bold;">
 		   Gives maximum of subarray size k
 		   
 		   Uncomment blocks to find indexes of max
@@ -116,7 +116,6 @@ pre {
 
 	public class FindMaxFromSubArrays {
 		public static void main(String[] args) {
-			// TODO Auto-generated method stub
 			int n, k = 0;
 
 			Scanner sc = new Scanner(System.in);
@@ -132,7 +131,9 @@ pre {
 				sum += a[i];
 			int max = sum;
 			// int ll = l, rr=r;
-			while (r != (n - 1)) { //From here only subtracts first elment of previous subarray and adds last element of current subarray
+			
+	//From here only subtracts first elment of previous subarray and adds last element of current subarray
+			while (r != (n - 1)) { 
 				sum -= a[l];
 				l++;
 				r++;
