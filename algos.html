@@ -53,7 +53,7 @@ pre {
 	<div class="item2">"Quick Search Here"</div>
 	<div class="item3">
 	
-	<pre><div style="background-color:#454140; color:white;font-family:serif;font-size:15;">
+	<pre><div style="background-color:#333333; color:white;font-family:serif;font-size:15;">
 	   Gives sum of all subarrays of given arrays for integers
 	   
 	   Time complexity: O(n^2*log(n^2))
@@ -91,7 +91,7 @@ pre {
 				}
 			}
 			Integer[] b = arrList.toArray(new Integer[0]);
-			Arrays.sort(b); 	           // Sorts and then prints those max subarray summations
+			Arrays.sort(b); 	                          // Sorts and then prints those max subarray summations
 			for (int i = b.length - 1; i > b.length - x - 1; i--) {
 				System.out.print(b[i] + " ");
 			}
