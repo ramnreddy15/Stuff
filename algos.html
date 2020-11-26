@@ -232,7 +232,6 @@ pre {
 
 	}
 	</code></pre>
-		</code></pre>
 	<pre><div style="background-color:#333333; color:white;font-family:courier new;font-size:15;font-weight: bold;">
 	
 	   Gives GCD given two numbers
@@ -259,16 +258,64 @@ pre {
 			b = sc.nextInt();
 
 			while (a != 0 && b != 0) {
-				if (a > b)
+				if (a > b) // Keep doing mod until a number is 0
 					a %= b;
 				else
 					b %= a;
 
 			}
-			if (a != 0)
+			if (a != 0) 
 				System.out.println(a);
 			else
 				System.out.println(b);
+
+		}
+	}
+	</code></pre>
+	<pre><div style="background-color:#333333; color:white;font-family:courier new;font-size:15;font-weight: bold;">
+
+	   Gives how many times needed to divide to get sum
+	   
+	   Using binary search algorithm
+	   
+	   Time Complexity is O(log2(maxi) * n)
+	   
+	 </div></pre>
+
+	<pre><code class="java"> 
+	import java.util.ArrayList;
+	import java.util.Arrays;
+	import java.util.Scanner;
+
+	public class binarySearchOnSum {
+
+		public static void main(String[] args) {
+			int n, s, maxi = 0;
+			Scanner sc = new Scanner(System.in);
+			n = sc.nextInt();
+			s = sc.nextInt();
+			int[] a = new int[n];
+			for (int i = 0; i < n; i++) { // Gets array and maximum
+				a[i] = sc.nextInt();
+				maxi = Math.max(maxi, a[i]);
+			}
+
+			int low = 1, high = maxi + 1;
+			int ans = high;
+			while (low <= high) { // Using a type of binary search
+				int k = (low + high) / 2;
+				int sum = 0;
+				for (int i = 0; i < n; i++) { // Divides all elements based on high or low
+					sum += a[i] / k;
+				}
+				if (sum <= s) { // Checks to see if sum is too high or low
+					ans = Math.min(ans, k);
+					high = k - 1;
+				} else {
+					low = k + 1;
+				}
+			}
+			System.out.println(ans);
 
 		}
 	}
