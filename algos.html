@@ -359,6 +359,8 @@ pre {
 	
 	   Gives factorial of number without stack overflow
 	   
+	   <mark>Only works for addition/multiplication/subtraction</mark>
+	   
 	   Uses double mod to get number
 	   
 	   Time Complexity is O(n)
@@ -370,7 +372,7 @@ pre {
 	import java.util.Arrays;
 	import java.util.Scanner;
 
-	public class AllClass {
+	public class factorialAdditionMultiplication {
 
 		public static void main(String[] args) {
 			int n = 0;
@@ -379,9 +381,9 @@ pre {
 			n = sc.nextInt();
 			int mod = (int) (1e9 + 7);
 			for (int i = 0; i < n; i++)
-				ans = (ans * i) % mod;
+				ans = (ans * i) % mod; // Doing mod to get opposite value
 
-			System.out.println(ans % mod);
+			System.out.println(ans % mod); // Doing it again to get original value
 
 		}
 	}
