@@ -476,6 +476,37 @@ pre {
 		}
 	}
 	</code></pre>
+	<pre><div style="background-color:#333333; color:white;font-family:courier new;font-size:15;font-weight: bold;">
+	
+	   Gives prime factorization of number
+	   
+	   Uses sieve algorithm
+	   
+	   Time Complexity is O(log(log(n)))
+	 	 
+	 </div></pre>
+	import java.util.ArrayList;
+	import java.util.Arrays;
+	import java.util.Scanner;
+
+	public class primeFactorizationWithSieve {
+
+		public static void main(String[] args) {
+			int n = 0;
+			Scanner sc = new Scanner(System.in);
+			n = sc.nextInt();
+			for (int i = 2; i * i <= n; i++) { // Starts with 2
+				// Checks to see if less than sqrt of number
+				while (n % i == 0) { // Goes until number is divided
+					System.out.print(i + " ");
+					n = n / i;
+				}
+			}
+			if (n > 1) // Prints if number is prime
+				System.out.println(n);
+		}
+	}
+	</code></pre>
 	</div>
 	<div class="item4">"Some Other Stuff-Here"</div>
 	<div class="item5">"Maybe Nothing here"</div>
