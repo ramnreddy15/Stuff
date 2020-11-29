@@ -423,6 +423,62 @@ pre {
 		}
 	}
 	</code></pre>
+	<pre><div style="background-color:#333333; color:white;font-family:courier new;font-size:15;font-weight: bold;">
+
+		   Checks to see if multiple numbers are prime or not
+		   
+		   Uses sieve algorithm and good for checking multiple numbers
+		   
+		   Loop 1: <mark>2, 3, 4, 5, 6, 7, 8, 9, 10</mark>
+		   
+		   Loop 2: <mark>2, 3</mark>, 4<mark>, 5</mark>, 6<mark>, 7</mark>, 8<mark>,
+		   9</mark>, 10
+		   
+		   Time Complexity is O(n*log(log(n)))
+		   
+		   3rd for loop is log(log(n))
+		 
+	 </div></pre>
+
+	<pre><code class="java"> 
+	import java.util.ArrayList;
+	import java.util.Arrays;
+	import java.util.Scanner;
+
+	public class isPrimeWithSieve {
+
+		public static int[] prime = new int[1000001];
+		public static int N = 1000001;
+
+		public static void sieveAlgorithm() {
+			for (int i = 2; i < N; i++) // Makes entire array start as prime
+				prime[i] = 1;
+			for (int i = 2; i < N; i++) { // Gets number
+				if (prime[i] == 1) { // IF only the number is prime
+					for (int j = 2 * i; j < N; j += i) { // Every time add same number
+						prime[j] = 0; // Make all non primes 0
+					}
+				}
+			}
+		}
+
+		public static void main(String[] args) {
+			int q = 0;
+			Scanner sc = new Scanner(System.in);
+			q = sc.nextInt();
+			sieveAlgorithm();
+			while (q > 0) {
+				int n = sc.nextInt();
+				if (prime[n] == 1) // Checks at that number
+					System.out.println("1");
+				else
+					System.out.println("0");
+				q--;
+			}
+
+		}
+	}
+	</code></pre>
 	</div>
 	<div class="item4">"Some Other Stuff-Here"</div>
 	<div class="item5">"Maybe Nothing here"</div>
