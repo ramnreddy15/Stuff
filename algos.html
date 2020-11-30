@@ -5,8 +5,24 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <style>
+.button {
+  background-color: tomato;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
 .item1 { grid-area: header;text-align:center;}
 .item2 { 
+	position: sticky;
+	padding: 5px;
 	grid-area: menu; 
 	text-align:center;
 }
@@ -48,7 +64,11 @@ pre {
 <body>
 <div class="grid-container">
 	<div class="item1">"The Algorithms Page"</div>
-	<div class="item2">"Quick Search Here"</div>
+	<div class="item2">
+		<form action="https://ramnreddy15.github.io/Stuff/index.html" method="get" target="_blank">
+		<button class="button"> Link to Index Page </button> 
+		</form>	
+	</div>
 	<div class="item3">
 	
 	<pre><div style="background-color:#333333; color:white;font-family:courier new;font-size:15;font-weight: bold;">
