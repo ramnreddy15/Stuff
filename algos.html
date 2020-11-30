@@ -5,6 +5,10 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <style>
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
 .button {
   background-color: tomato;
   border: none;
@@ -23,8 +27,6 @@
 .item2 { 
 	padding: 5px;
 	grid-area: menu; 
-	position: -webkit-sticky;
-	position: sticky;
 	text-align:center;
 }
 .item3 { grid-area: main; }
@@ -66,9 +68,11 @@ pre {
 <div class="grid-container">
 	<div class="item1">"The Algorithms Page"</div>
 	<div class="item2">
-		<form action="https://ramnreddy15.github.io/Stuff/index.html" method="get" target="_blank">
-		<button class="button"> Link to Index Page </button> 
-		</form>	
+		<div class="sticky">
+			<form action="https://ramnreddy15.github.io/Stuff/index.html" method="get" target="_blank">
+			<button class="button"> Link to Index Page </button> 
+			</form>
+		</div>
 	</div>
 	<div class="item3">
 	
